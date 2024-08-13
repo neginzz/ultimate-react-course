@@ -143,7 +143,7 @@ function getBook(id) {
   return data.find((d) => d.id === id);
 }
 
-const Book = getBook(1);
+const Book = getBook(3);
 
 // const title=Book.title;
 // const author=Book.author;
@@ -257,3 +257,18 @@ const { title, author, pages, genres, publicationDate, hasMovieAdaptation } =
 
 // const count = Book.reviews.librarything.reviewsCount ?? "no data";
 // count;
+
+//*********** optional chaining
+
+function getTotalReviewCount(Book) {
+  const bookReads = Book.reviews.goodreads.reviewsCount;
+  // in book with id= 3 Book.reviews.librarything is undefined
+  // so we add ? to do it optionally so js will no longer try to read reviewscount
+  //the result is NAN but atleast we are not getting an error
+  //so set a defult by ??
+  const librarything = Book.reviews.librarything?.reviewsCount ?? 0;
+
+  return bookReads + librarything;
+}
+
+console.log(getTotalReviewCount(Book));
