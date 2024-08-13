@@ -143,7 +143,7 @@ function getBook(id) {
   return data.find((d) => d.id === id);
 }
 
-const Book = getBook(2);
+const Book = getBook(1);
 
 // const title=Book.title;
 // const author=Book.author;
@@ -152,9 +152,9 @@ const Book = getBook(2);
 // heplful specially for the api
 
 //OBJ
-const { title, author, genres } = Book;
+const { title, author,pages, genres } = Book;
 
-console.log(title, author, genres);
+// console.log(title, author, genres);
 
 //ARRAY
 
@@ -162,7 +162,50 @@ console.log(title, author, genres);
 // const secondryGenres = genres[1]
 
 // destructing
-const[primaryGenres,secondryGenres] = genres;
+// const[primaryGenres,secondryGenres] = genres;
 
-console.log(primaryGenres,secondryGenres);
+// console.log(primaryGenres,secondryGenres);
+
+
+
+//----Rest operator
+
+// ... otherGenres :  this will automatically create an array 
+// which contains all the values that we haven't previously destructured.
+
+//tip: that we can only place this here in the end of the destructuring operation.
+
+
+
+// const[primaryGenres,secondryGenres, ...otherGenres] = genres;
+
+// console.log(primaryGenres,secondryGenres, otherGenres);
+
+// /Spread operator - more common
+
+//wrong way
+// const newGenres = [genres, 'epic fantasy']
+// newGenres;
+
+//right way
+
+// const newGenres = [...genres, 'epic fantasy']
+// newGenres;
+
+//OBJ
+
+//wrong way
+
+
+// const updateBook = {Book, moviePublicationDate: "2001-12-19"}
+// updateBook;
+
+//right way
+// adding a new property -> moviePublicationDate
+// lets overwrite an exciting propery -> pages
+//the spread-out original object needs to be first.
+
+const updateBook = {...Book, moviePublicationDate: "2001-12-19", pages: "1210"}
+updateBook;
+
 
