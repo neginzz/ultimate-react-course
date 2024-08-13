@@ -206,7 +206,14 @@ const { title, author, pages, genres, publicationDate, hasMovieAdaptation } =
 
 //******** Template Literals
 // get only the year from 1954-07-29
-const summery=`${title}, a ${pages}-page long book is  a book was written by ${author} and published in ${publicationDate.split('-')[0]}`
+// const summery = `${title}, a ${pages}-page long book is  a book was written by ${author} and published in ${
+//   publicationDate.split("-")[0]
+// }. the book has${hasMovieAdaptation ? "" : "not"} been adabted as a movie`;
 
-summery;
+// console.log(summery);
 
+//******** Ternary operator
+
+const pageRange = pages > 1000 ? "over a thousand" : "Less than a thousand";
+pageRange;
+console.log(`The book has ${pageRange} pages`);
