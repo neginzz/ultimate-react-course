@@ -152,7 +152,8 @@ const Book = getBook(1);
 // heplful specially for the api
 
 //OBJ
-const { title, author,pages, genres } = Book;
+const { title, author, pages, genres, publicationDate, hasMovieAdaptation } =
+  Book;
 
 // console.log(title, author, genres);
 
@@ -166,16 +167,12 @@ const { title, author,pages, genres } = Book;
 
 // console.log(primaryGenres,secondryGenres);
 
-
-
 //----Rest operator
 
-// ... otherGenres :  this will automatically create an array 
+// ... otherGenres :  this will automatically create an array
 // which contains all the values that we haven't previously destructured.
 
 //tip: that we can only place this here in the end of the destructuring operation.
-
-
 
 // const[primaryGenres,secondryGenres, ...otherGenres] = genres;
 
@@ -196,7 +193,6 @@ const { title, author,pages, genres } = Book;
 
 //wrong way
 
-
 // const updateBook = {Book, moviePublicationDate: "2001-12-19"}
 // updateBook;
 
@@ -205,7 +201,12 @@ const { title, author,pages, genres } = Book;
 // lets overwrite an exciting propery -> pages
 //the spread-out original object needs to be first.
 
-const updateBook = {...Book, moviePublicationDate: "2001-12-19", pages: "1210"}
-updateBook;
+// const updateBook = {...Book, moviePublicationDate: "2001-12-19", pages: "1210"}
+// updateBook;
 
+//******** Template Literals
+// get only the year from 1954-07-29
+const summery=`${title}, a ${pages}-page long book is  a book was written by ${author} and published in ${publicationDate.split('-')[0]}`
+
+summery;
 
