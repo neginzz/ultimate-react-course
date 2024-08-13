@@ -224,8 +224,36 @@ const { title, author, pages, genres, publicationDate, hasMovieAdaptation } =
 //   return srt.split("-")[0]
 //  }
 
-//Arrow way
+//Arrow way -> useful in callback func
 
-const getYear = srt => srt.split("-")[0];
+// const getYear = srt => srt.split("-")[0];
 
-console.log(getYear(publicationDate));
+// console.log(getYear(publicationDate));
+
+//***************** Short-Circuiting And Logical Operators
+// in certain ocnditions, the operator immedietly return the first value
+// and not even look second value
+
+//when the first value is true, will return the second one
+
+// console.log(true && "some string");
+// console.log(false && "some string");
+// console.log(hasMovieAdaptation && "this book has a movie");
+// console.log(0 && "some text");
+
+//falsy: 0, '', null, undefined
+
+// console.log(true ||"some string");
+// console.log(false ||"some string");
+
+// console.log(Bookook.translations.spanish);
+
+// const spanishTranslation = Book.translations.spanish || "NOT TRANSLATED";
+// spanishTranslation;
+
+// console.log(Book.reviews.librarything.reviewsCount);
+// const countWrong = Book.reviews.librarything.reviewsCount || "no data";
+// countWrong;
+
+// const count = Book.reviews.librarything.reviewsCount ?? "no data";
+// count;
