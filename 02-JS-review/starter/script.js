@@ -142,3 +142,27 @@ function getBooks() {
 function getBook(id) {
   return data.find((d) => d.id === id);
 }
+
+const Book = getBook(2);
+
+// const title=Book.title;
+// const author=Book.author;
+
+//destructing : variable name should be excacly the same name as the properties in the obj
+// heplful specially for the api
+
+//OBJ
+const { title, author, genres } = Book;
+
+console.log(title, author, genres);
+
+//ARRAY
+
+// const primaryGenres = genres[0]
+// const secondryGenres = genres[1]
+
+// destructing
+const[primaryGenres,secondryGenres] = genres;
+
+console.log(primaryGenres,secondryGenres);
+
