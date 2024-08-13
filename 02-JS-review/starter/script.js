@@ -214,6 +214,18 @@ const { title, author, pages, genres, publicationDate, hasMovieAdaptation } =
 
 //******** Ternary operator
 
-const pageRange = pages > 1000 ? "over a thousand" : "Less than a thousand";
-pageRange;
-console.log(`The book has ${pageRange} pages`);
+// const pageRange = pages > 1000 ? "over a thousand" : "Less than a thousand";
+// pageRange;
+// console.log(`The book has ${pageRange} pages`);
+
+//******** Arrow function
+// old way
+//  function getYear(srt) {
+//   return srt.split("-")[0]
+//  }
+
+//Arrow way
+
+const getYear = srt => srt.split("-")[0];
+
+console.log(getYear(publicationDate));
