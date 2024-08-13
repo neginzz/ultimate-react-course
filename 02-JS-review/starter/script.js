@@ -143,7 +143,7 @@ function getBook(id) {
   return data.find((d) => d.id === id);
 }
 
-const Book = getBook(3);
+// const Book = getBook(3);
 
 // const title=Book.title;
 // const author=Book.author;
@@ -152,8 +152,8 @@ const Book = getBook(3);
 // heplful specially for the api
 
 //OBJ
-const { title, author, pages, genres, publicationDate, hasMovieAdaptation } =
-  Book;
+// const { title, author, pages, genres, publicationDate, hasMovieAdaptation } =
+//   Book;
 
 // console.log(title, author, genres);
 
@@ -260,15 +260,39 @@ const { title, author, pages, genres, publicationDate, hasMovieAdaptation } =
 
 //*********** optional chaining
 
-function getTotalReviewCount(Book) {
-  const bookReads = Book.reviews.goodreads.reviewsCount;
-  // in book with id= 3 Book.reviews.librarything is undefined
-  // so we add ? to do it optionally so js will no longer try to read reviewscount
-  //the result is NAN but atleast we are not getting an error
-  //so set a defult by ??
-  const librarything = Book.reviews.librarything?.reviewsCount ?? 0;
+// function getTotalReviewCount(Book) {
+//   const bookReads = Book.reviews.goodreads.reviewsCount;
+//   // in book with id= 3 Book.reviews.librarything is undefined
+//   // so we add ? to do it optionally so js will no longer try to read reviewscount
+//   //the result is NAN but atleast we are not getting an error
+//   //so set a defult by ??
+//   const librarything = Book.reviews.librarything?.reviewsCount ?? 0;
 
-  return bookReads + librarything;
-}
+//   return bookReads + librarything;
+// }
 
-console.log(getTotalReviewCount(Book));
+// console.log(getTotalReviewCount(Book));
+
+// Functional array method : map - filter - reduce -> they do't mutate the original array but
+// instead return a new array based on the original one
+
+/*********** MAP method */
+
+/*the map method will loop over an array and return a new array with the same length 
+with some operation applied to each of the elements of the original array.*/
+
+const books = getBooks();
+books;
+
+const x = [1, 2, 3, 4, 5].map((el) => el * 2);
+console.log(x);
+
+const titles = books.map(book => book.title);
+
+console.log(titles);
+
+const essentialData = books.map((book) =>({ title: book.title, author: book.author})
+);
+
+console.log(essentialData); 
+
