@@ -284,28 +284,37 @@ with some operation applied to each of the elements of the original array.*/
 const books = getBooks();
 books;
 
-const x = [1, 2, 3, 4, 5].map((el) => el * 2);
-console.log(x);
+// const x = [1, 2, 3, 4, 5].map((el) => el * 2);
+// console.log(x);
 
-const titles = books.map((book) => book.title);
+// const titles = books.map((book) => book.title);
 
-console.log(titles);
+// console.log(titles);
 
-const essentialData = books.map((book) => ({
-  title: book.title,
-  author: book.author,
-}));
+// const essentialData = books.map((book) => ({
+//   title: book.title,
+//   author: book.author,
+// }));
 
-console.log(essentialData);
+// console.log(essentialData);
 
 /**********filter method */
 //And now here, instead of returning the value that we want in a new array,
 // we need to return a condition which will either be true or false, if it was true add to the new list
 
-const longBooks = books.filter((book) => book.pages > 500).filter((book)=> book.hasMovieAdaptation)
-longBooks;
+// const longBooks = books.filter((book) => book.pages > 500).filter((book)=> book.hasMovieAdaptation)
+// longBooks;
 
+// const adventureBooks=books.filter (book=>book.genres.includes('adventure')).map(book=>book.title)
 
-const adventureBooks=books.filter (book=>book.genres.includes('adventure')).map(book=>book.title)
+// adventureBooks
 
-adventureBooks
+/************** reduce */
+//the most powerful one
+// it takes a callback func which will be executed for each element of th array
+//and as a secon argument it also takes in a starter value, basically
+// the goal of the reduce is to reduce basically the entire array to just one value (to boil it down)
+
+const pagesAllBooks = books.reduce((sum, book) =>sum+ book.pages, 0);
+
+pagesAllBooks;
