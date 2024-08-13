@@ -315,6 +315,23 @@ books;
 //and as a secon argument it also takes in a starter value, basically
 // the goal of the reduce is to reduce basically the entire array to just one value (to boil it down)
 
-const pagesAllBooks = books.reduce((sum, book) =>sum+ book.pages, 0);
+// const pagesAllBooks = books.reduce((sum, book) =>sum+ book.pages, 0);
 
-pagesAllBooks;
+// pagesAllBooks;
+
+/************ sort method  */
+// not an functional method to fix this we can use slice
+
+const arr = [3, 7, 1, 9, 6];
+
+//صعودی
+const sorted = arr.slice().sort((a, b) => a - b);
+
+//نزولی b-a
+arr;
+sorted;
+
+
+const sortedByPages = books.slice().sort((a, b) => a.pages - b.pages);
+sortedByPages;
+
