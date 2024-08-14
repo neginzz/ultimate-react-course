@@ -322,16 +322,50 @@ books;
 /************ sort method  */
 // not an functional method to fix this we can use slice
 
-const arr = [3, 7, 1, 9, 6];
+// const arr = [3, 7, 1, 9, 6];
 
-//صعودی
-const sorted = arr.slice().sort((a, b) => a - b);
+// //صعودی
+// const sorted = arr.slice().sort((a, b) => a - b);
 
-//نزولی b-a
-arr;
-sorted;
+// //نزولی b-a
+// arr;
+// sorted;
 
+// const sortedByPages = books.slice().sort((a, b) => a.pages - b.pages);
+// sortedByPages;
 
-const sortedByPages = books.slice().sort((a, b) => a.pages - b.pages);
-sortedByPages;
+/**********immutable */
+// Mutation means a change in the original code or data.
+// this is for react
+// add delete update arrays without changing the original ones
 
+// 1) add a book obj to array
+
+const newBook = {
+  id: 6,
+  title: "Harry Potter and chamber of secret",
+  author: "J. k. Rowling",
+};
+
+const booksAfterAdd = [...books, newBook];
+booksAfterAdd;
+
+// 2) delete a book obj from array
+
+// always create new arrya to not mutate anything
+// filter array make it short
+
+const booksAfterDelete = booksAfterAdd.filter((book) => book.id !== 3);
+
+booksAfterDelete;
+
+//3) update book obj in the array
+
+// map - same lenght
+// we updated one property in one obj of the array
+
+const bookAfterUpdate = booksAfterDelete.map((book) =>
+  book.id === 1 ? { ...book, pages: 1210 } : book
+);
+
+bookAfterUpdate;
