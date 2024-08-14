@@ -341,31 +341,45 @@ books;
 
 // 1) add a book obj to array
 
-const newBook = {
-  id: 6,
-  title: "Harry Potter and chamber of secret",
-  author: "J. k. Rowling",
-};
+// const newBook = {
+//   id: 6,
+//   title: "Harry Potter and chamber of secret",
+//   author: "J. k. Rowling",
+// };
 
-const booksAfterAdd = [...books, newBook];
-booksAfterAdd;
+// const booksAfterAdd = [...books, newBook];
+// booksAfterAdd;
 
 // 2) delete a book obj from array
 
 // always create new arrya to not mutate anything
 // filter array make it short
 
-const booksAfterDelete = booksAfterAdd.filter((book) => book.id !== 3);
+// const booksAfterDelete = booksAfterAdd.filter((book) => book.id !== 3);
 
-booksAfterDelete;
+// booksAfterDelete;
 
 //3) update book obj in the array
 
 // map - same lenght
 // we updated one property in one obj of the array
 
-const bookAfterUpdate = booksAfterDelete.map((book) =>
-  book.id === 1 ? { ...book, pages: 1210 } : book
-);
+// const bookAfterUpdate = booksAfterDelete.map((book) =>
+//   book.id === 1 ? { ...book, pages: 1210 } : book
+// );
 
-bookAfterUpdate;
+// bookAfterUpdate;
+
+//********************Asynchronous js : promises
+
+// json placehplder api
+// need some time for fetching -- http req wait and then dl data from server
+// js does not wait and move to next line
+// fulfilled state -> when the data has arrived -> handle the state by using then method
+// res means respond -> it need to convert json to js obj
+
+fetch("https://jsonplaceholder.typicode.com/todos")
+  .then((res) => res.json())
+  .then((data) => console.log(data));
+
+console.log("jonas");
