@@ -378,8 +378,24 @@ books;
 // fulfilled state -> when the data has arrived -> handle the state by using then method
 // res means respond -> it need to convert json to js obj
 
-fetch("https://jsonplaceholder.typicode.com/todos")
-  .then((res) => res.json())
-  .then((data) => console.log(data));
+// fetch("https://jsonplaceholder.typicode.com/todos")
+//   .then((res) => res.json())
+//   .then((data) => console.log(data));
+
+// console.log("jonas");
+
+//******* async await */
+
+//nicer syntax
+
+async function getTodos() {
+  // pausing the code inside of function
+  const res = await fetch("https://jsonplaceholder.typicode.com/todos");
+  const data =  await res.json();
+  console.log(data);
+}
+
+getTodos();
+
 
 console.log("jonas");
